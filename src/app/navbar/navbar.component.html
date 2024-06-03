@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="home" routerLinkActive="text-primary" >Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="home" fragment="section1">Home/section1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="home" fragment="section3">Home/Section3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'list'" routerLinkActive="text-primary" >list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  routerLinkActive="text-primary" (click)="linker()">item</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>

@@ -1,0 +1,20 @@
+<p>register works!</p>
+<div class="div1"> 
+
+    <form class="form"  [formGroup]="myForm" (ngSubmit)="test()" >
+        <div>
+            <label for="fname">Firstname</label>
+            <input type="text" name="first" id="fname" formControlName = 'firstname' >
+        </div>
+        <div>
+            <label for="laname">Password</label>
+            <input type="text"  name="last" id="laname"  formControlName = 'lastname' >
+        </div>
+        <div>
+            <label for="age">Your Age</label>
+            <input type="number"  name="age" id="age"  formControlName = 'age' >
+        </div>
+        <button type="submit" class="btn" > Submit </button>
+    </form>
+
+</div>

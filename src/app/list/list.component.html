@@ -1,0 +1,38 @@
+<h2>list works!</h2>
+<div class="catalog">
+    <ul class="list">
+        <ng-container *ngFor=" let item of list" >
+            <li >
+                <div class="imgbox" appListener >
+                    <img [src]="item.thumbnail" [alt]="item.title">
+                </div>
+                <div class="idbox"  > 
+                    <div class="id">Products ID:</div>
+                    <div class="idvalue"> {{ item.id }} </div>
+                </div>
+                <div class="namebox">
+                    <div class="name">Products name:</div>
+                    <div class="namevalue" fonter > {{item.title}} </div>
+                </div>
+                <div class="descbox">
+                    <div class="description">About Products:</div>
+                    <div class="descvalue"> {{item.category}} </div>
+                </div>
+                <div class="pricebox"  >
+                    <div class="price">Price:</div>
+                    <div class="pricevalue" appBind > {{item.price}} </div>
+                </div>
+                <div class="btn" *ngIf="item.available; else request"  
+                 painter >
+                    Buy
+                </div>
+                <ng-template #request >
+                    <input type="text" #order >
+                    <div class="btn"  >
+                        Order Product
+                    </div>
+                </ng-template>
+            </li>
+        </ng-container>
+    </ul>
+</div>

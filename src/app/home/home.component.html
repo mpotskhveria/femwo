@@ -1,0 +1,31 @@
+
+
+<section id="section1">
+    <app-filter (onSelect)="parentFilter($event)"></app-filter>
+</section>
+
+<!-- <div>
+    <app-login></app-login>
+</div> -->
+
+<div>
+    <app-register></app-register>
+</div>
+
+<section id="section2" >
+    <app-catalog  
+    [filterLogic]="selectedChange"
+    #list
+    ></app-catalog>
+</section>
+
+
+<section id="section3">
+    <app-list></app-list>
+</section> 
+
+
+
+
+
+

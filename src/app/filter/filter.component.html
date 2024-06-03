@@ -1,0 +1,25 @@
+
+<div class="div1">
+    <div>
+        <label for="cat1">All</label>
+        <input type="radio" name="category" id="cat1" value="all"  [(ngModel)]="selectedCategory"
+        (change)="filterCategories()" >
+    </div>
+    <div>
+        <label for="cat2">Food</label>
+        <input type="radio" name="category" id="cat2" value="food"   [(ngModel)]="selectedCategory"
+        (change)="filterCategories()" >
+    </div>
+    <div>
+        <label for="cat3">Technic</label>
+        <input type="radio" name="category" id="cat3" value="tec"  [(ngModel)]="selectedCategory" 
+        (change)="filterCategories()"  >
+    </div>
+    <div>
+        <label for="cat4">Oil</label>
+        <input type="radio" name="category" id="cat4" value="oil"  [(ngModel)]="selectedCategory" 
+        (change)="filterCategories()"  
+        (click)="testService()">
+    </div>
+    
+</div>

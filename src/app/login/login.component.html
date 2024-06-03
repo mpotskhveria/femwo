@@ -1,0 +1,23 @@
+<p>login works!</p>
+<div class="div1"> 
+
+    <form class="form" (ngSubmit)="login()" #signInForm = 'ngForm'>
+
+        {{ signInForm.form.valid }}
+        {{ signInForm.submitted}}
+        <div>
+            <label for="user">Username</label>
+            <input type="text" required #username = 'ngModel'  name="username" id="user" [(ngModel)]="user.username" >
+        </div>
+        <div *ngIf="username.invalid && username.touched "  class="text-danger">
+            Pelase enter your username
+        </div>
+        <div>
+            <label for="pwd">Password</label>
+            <input type="password" required  #password = 'ngModel' name="password" id="pwd" [(ngModel)]="user.pwd" >
+        </div>
+        <button type="submit" class="btn" [disabled]="signInForm.form.invalid" > Submit </button>
+
+    </form>
+
+</div>

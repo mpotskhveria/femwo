@@ -1,0 +1,46 @@
+<div class="catalog">
+
+
+    <ul class="list">
+        <ng-container *ngFor=" let item of saqoneli" >
+            <ng-container *ngIf="filterLogic === 'all' || item.category === filterLogic ">
+                <li [ngStyle]="{backgroundColor: item.rating > 4.3 ? 'lightgreen' : 'tomato'}" >
+                    <div class="imgbox" [ngClass]="{round: item.category === filterLogic}"  appListener
+                    [routerLink]="'/list/'+item.id"
+                    >
+                        <img [src]="item.thumbnail" [alt]="item.title">
+                    </div>
+                    
+                    <div class="idbox"  > 
+                        <div class="id">Products ID:</div>
+                        <div class="idvalue"> {{ item.id }} </div>
+                    </div>
+                    <div class="namebox">
+                        <div class="name">Products name:</div>
+                        <div class="namevalue" fonter > {{item.title | lowercase }} </div>
+                    </div>
+                    <div class="descbox">
+                        <div class="description">About Products:</div>
+                        <div class="descvalue"> {{item.category}} </div>
+                    </div>
+                    <div class="pricebox"  >
+                        <div class="price">Price:</div>
+                        <div class="pricevalue" appBind > {{item.price | currency }} </div>
+                    </div>
+                    <div class="btn" *ngIf="item.stock > 50; else request"  
+                    (click)="select(item)" painter >
+                        Buy
+                    </div>
+                    <div>
+                        {{item.rating | rating: maxRating : decimal }}
+                    </div>
+                    <ng-template #request >
+                        <div class="btn" (click)="loger()" >
+                            Order Product
+                        </div>
+                    </ng-template>
+                </li>
+            </ng-container>
+        </ng-container>
+    </ul>
+</div>
